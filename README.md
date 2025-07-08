@@ -144,10 +144,35 @@ EDA focused on understanding the distribution of transaction features and the na
 - Compared feature distributions for fraud vs. legit cases
 
 **Visuals:**
+1. Class Distribution
 ![Class imbalance bar plot](assets/class_distribution.png)
 ----
-![Log-scaled histogram of transaction amounts by class](assets/amount_distribution_by_class.png.png)
-
+2. Amount Distribution by Class
+![Log-scaled histogram of transaction amounts by class](assets/amount_distribution_by_class.png)
+----
+3. Time Distribution by Class
+![Histogram of transaction times by class](assets/time_distribution_by_class.png)
+----
+4. Correlation Heatmap
+![Heatmap of correlations between all numeric features](assets/correlation_matrix.png)
+----
+5. Boxplots of PCA features
+- V1
+![Boxplots comparing PCA features V1–V5](assets/boxplot_V1_by_class.png)
+- V2
+![Boxplots comparing PCA features V1–V5](assets/boxplot_V2_by_class.png)
+- V3
+![Boxplots comparing PCA features V1–V5](assets/boxplot_V3_by_class.png)
+- V4
+![Boxplots comparing PCA features V1–V5](assets/boxplot_V4_by_class.png)
+- V5
+![Boxplots comparing PCA features V1–V5](assets/boxplot_V5_by_class.png)
+----
+6. Violin Plot V14
+![Distribution of V14 shaped by class](assets/violinplot_V14.png)
+----
+7. KDE Plot V14
+![KDE density overlay comparing fraud vs legit for V14](assets/kde_V14_fraud_vs_legit.png)
 
 ---
 ## 🧪 Unsupervised Modeling — Isolation Forest
@@ -174,9 +199,15 @@ Isolation Forest isolates points by randomly selecting features and splitting va
 - `isoforest_scored.csv`
 
 **Visuals:**
-- `isoforest_score_hist.png`: Distribution of anomaly scores
-- `isoforest_pr_curve.png`: Precision-recall of anomaly predictions
-- `isoforest_confusion_matrix.png`: Isolation Forest fraud catch performance
+
+1. Distribution of anomaly scores
+![isoforest_score_hist.png](assets/isoforest_score_hist.png)
+----
+2. Precision-recall of anomaly predictions
+![Precision-recall of anomaly predictions](assets/isoforest_pr_curve.png)
+----
+3. Isolation Forest fraud catch performance
+![Isolation Forest fraud catch performance](assets/isoforest_confusion_matrix.png)
 
 ---
 ## ➕ Augmenting with Anomaly Scores
@@ -208,10 +239,17 @@ Inject `anomaly_score` as an additional feature in supervised learning to enrich
 - Evaluation data: `X_test.csv`, `y_test.csv`, `y_probs.npy`
 
 **Visuals:**
-- `rf_confusion_matrix.png`: Confusion matrix at threshold=0.5
-- `rf_pr_curve.png`: PR curve for classifier probabilities
-- `rf_feature_importance.png`: Feature ranking by Gini importance
-- `rf_classification_report.txt`: Raw metrics export
+1. Confusion matrix at threshold=0.5
+![Confusion matrix at threshold=0.5](assets/rf_confusion_matrix.png)
+----
+2. PR curve for classifier probabilities
+![PR curve for classifier probabilities](assets/rf_pr_curve.png)
+----
+3. Feature ranking by Gini importance
+![Feature ranking by Gini importance](assets/rf_feature_importance.png)
+----
+4. Raw metrics export
+![Raw metrics export](rf_classification_report.txt)
 
 ---
 ## 🎯 Threshold Tuning
@@ -231,9 +269,14 @@ Rather than predicting fraud if probability > 0.5, we evaluate different thresho
 - Final metrics at best threshold
 
 **Visuals:**
-- `threshold_vs_metrics.png`: Precision/Recall/F1 vs threshold
-- `final_confusion_matrix_thresh.png`: Confusion matrix @ tuned threshold
-- `final_report_threshold_tuned.txt`: Report with new metrics
+1. Precision/Recall/F1 vs threshold
+![Precision/Recall/F1 vs threshold](assets/threshold_vs_metrics.png)
+----
+2. Confusion matrix @ tuned threshold
+![Confusion matrix @ tuned threshold](assets/final_confusion_matrix_thresh.png)
+----
+3. Report with new metrics
+![Report with new metrics](assets/final_report_threshold_tuned.txt)
 
 ---
 
