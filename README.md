@@ -145,34 +145,34 @@ EDA focused on understanding the distribution of transaction features and the na
 
 **Visuals:**
 1. Class Distribution
-![Class imbalance bar plot](assets/class_distribution.png)
+![Class imbalance bar plot](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/class_distribution.png)
 ----
 2. Amount Distribution by Class
-![Log-scaled histogram of transaction amounts by class](assets/amount_distribution_by_class.png)
+![Log-scaled histogram of transaction amounts by class](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/amount_distribution_by_class.png)
 ----
 3. Time Distribution by Class
-![Histogram of transaction times by class](assets/time_distribution_by_class.png)
+![Histogram of transaction times by class](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/time_distribution_by_class.png)
 ----
 4. Correlation Heatmap
-![Heatmap of correlations between all numeric features](assets/correlation_matrix.png)
+![Heatmap of correlations between all numeric features](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/correlation_matrix.png)
 ----
 5. Boxplots of PCA features
 - V1
-![Boxplots comparing PCA features V1–V5](assets/boxplot_V1_by_class.png)
+![Boxplots comparing PCA features V1–V5](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/boxplot_V1_by_class.png)
 - V2
-![Boxplots comparing PCA features V1–V5](assets/boxplot_V2_by_class.png)
+![Boxplots comparing PCA features V1–V5](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/boxplot_V2_by_class.png)
 - V3
-![Boxplots comparing PCA features V1–V5](assets/boxplot_V3_by_class.png)
+![Boxplots comparing PCA features V1–V5](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/boxplot_V3_by_class.png)
 - V4
-![Boxplots comparing PCA features V1–V5](assets/boxplot_V4_by_class.png)
+![Boxplots comparing PCA features V1–V5](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/boxplot_V4_by_class.png)
 - V5
-![Boxplots comparing PCA features V1–V5](assets/boxplot_V5_by_class.png)
+![Boxplots comparing PCA features V1–V5](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/boxplot_V5_by_class.png)
 ----
 6. Violin Plot V14
-![Distribution of V14 shaped by class](assets/violinplot_V14.png)
+![Distribution of V14 shaped by class](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/violinplot_V14.png)
 ----
 7. KDE Plot V14
-![KDE density overlay comparing fraud vs legit for V14](assets/kde_V14_fraud_vs_legit.png)
+![KDE density overlay comparing fraud vs legit for V14](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/kde_V14_fraud_vs_legit.png)
 
 ---
 ## 🧪 Unsupervised Modeling — Isolation Forest
@@ -201,13 +201,13 @@ Isolation Forest isolates points by randomly selecting features and splitting va
 **Visuals:**
 
 1. Distribution of anomaly scores
-![isoforest_score_hist.png](assets/isoforest_score_hist.png)
+![isoforest_score_hist.png](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/isoforest_score_hist.png)
 ----
 2. Precision-recall of anomaly predictions
-![Precision-recall of anomaly predictions](assets/isoforest_pr_curve.png)
+![Precision-recall of anomaly predictions](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/isoforest_pr_curve.png)
 ----
 3. Isolation Forest fraud catch performance
-![Isolation Forest fraud catch performance](assets/isoforest_confusion_matrix.png)
+![Isolation Forest fraud catch performance](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/isoforest_confusion_matrix.png)
 
 ---
 ## ➕ Augmenting with Anomaly Scores
@@ -240,16 +240,16 @@ Inject `anomaly_score` as an additional feature in supervised learning to enrich
 
 **Visuals:**
 1. Confusion matrix at threshold=0.5
-![Confusion matrix at threshold=0.5](assets/rf_confusion_matrix.png)
+![Confusion matrix at threshold=0.5](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/rf_confusion_matrix.png)
 ----
 2. PR curve for classifier probabilities
-![PR curve for classifier probabilities](assets/rf_pr_curve.png)
+![PR curve for classifier probabilities](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/rf_pr_curve.png)
 ----
 3. Feature ranking by Gini importance
-![Feature ranking by Gini importance](assets/rf_feature_importance.png)
+![Feature ranking by Gini importance](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/rf_feature_importance.png)
 ----
 4. Raw metrics export
-![Raw metrics export](rf_classification_report.txt)
+![Raw metrics export](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/rf_classification_report.txt)
 
 ---
 ## 🎯 Threshold Tuning
@@ -270,13 +270,13 @@ Rather than predicting fraud if probability > 0.5, we evaluate different thresho
 
 **Visuals:**
 1. Precision/Recall/F1 vs threshold
-![Precision/Recall/F1 vs threshold](assets/threshold_vs_metrics.png)
+![Precision/Recall/F1 vs threshold](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/threshold_vs_metrics.png)
 ----
 2. Confusion matrix @ tuned threshold
-![Confusion matrix @ tuned threshold](assets/final_confusion_matrix_thresh.png)
+![Confusion matrix @ tuned threshold](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/final_confusion_matrix_thresh.png)
 ----
 3. Report with new metrics
-![Report with new metrics](assets/final_report_threshold_tuned.txt)
+![Report with new metrics](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/final_report_threshold_tuned.txt)
 
 ---
 
