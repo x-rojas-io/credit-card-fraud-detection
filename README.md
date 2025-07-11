@@ -137,7 +137,7 @@ Combine:
 ## 📊 Exploratory Data Analysis (EDA)
 
 EDA focused on understanding the distribution of transaction features and the nature of fraud cases.
-
+[Exploratory Data Analysis](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/notebooks/01_exploration.ipynb)
 **Highlights:**
 - Confirmed severe class imbalance
 - Explored `Amount`, `Time`, and PCA components
@@ -146,12 +146,18 @@ EDA focused on understanding the distribution of transaction features and the na
 **Visuals:**
 1. Class Distribution
 ![Class imbalance bar plot](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/class_distribution.png)
+---
+`Less than 0.2% of all transactions are fraudulent — a textbook example of class imbalance. This log-scaled chart visualizes the massive skew in class frequencies, with each bar labeled by percentage. Such imbalance challenges traditional classifiers, which tend to favor the majority class and ignore rare fraud cases.`
 ----
 2. Amount Distribution by Class
 ![Log-scaled histogram of transaction amounts by class](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/amount_distribution_by_class.png)
 ----
+`This plot shows how transaction amounts are distributed across classes. Fraudulent transactions tend to cluster around lower values, while legitimate purchases span a wider range. The log-scale x-axis helps surface these subtle fraud patterns that would otherwise be hidden.`
+----
 3. Time Distribution by Class
-![Histogram of transaction times by class](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/time_distribution_by_class.png)
+![Histogram of transaction times by class](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/hourly_transaction_density.png)
+----
+`This density plot reveals that while legitimate transactions peak during typical business hours, fraudulent activity appears more uniformly distributed — possibly taking place during off-peak hours to avoid detection.`
 ----
 4. Correlation Heatmap
 ![Heatmap of correlations between all numeric features](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/correlation_matrix.png)
@@ -249,7 +255,18 @@ Inject `anomaly_score` as an additional feature in supervised learning to enrich
 ![Feature ranking by Gini importance](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/rf_feature_importance.png)
 ----
 4. Raw metrics export
-![Raw metrics export](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/rf_classification_report.txt)
+<pre>
+<code>```
+              precision    recall  f1-score   support
+
+           0     0.9996    0.9999    0.9998     56864
+           1     0.9620    0.7755    0.8588        98
+
+    accuracy                         0.9996     56962
+   macro avg     0.9808    0.8877    0.9293     56962
+weighted avg     0.9995    0.9996    0.9995     56962
+```</code>
+</pre>
 
 ---
 ## 🎯 Threshold Tuning
@@ -276,7 +293,20 @@ Rather than predicting fraud if probability > 0.5, we evaluate different thresho
 ![Confusion matrix @ tuned threshold](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/final_confusion_matrix_thresh.png)
 ----
 3. Report with new metrics
-![Report with new metrics](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/final_report_threshold_tuned.txt)
+<pre>
+<code>```
+
+              precision    recall  f1-score   support
+
+           0     0.9997    0.9999    0.9998     56864
+           1     0.9318    0.8367    0.8817        98
+
+    accuracy                         0.9996     56962
+   macro avg     0.9658    0.9183    0.9408     56962
+weighted avg     0.9996    0.9996    0.9996     56962
+```</code>
+</pre>
+
 
 ---
 
