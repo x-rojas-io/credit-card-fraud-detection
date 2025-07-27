@@ -13,11 +13,11 @@ This is a practical Data Science/ML project that investigates the detection of f
 
 ## 📊 Problem Statement
 
-### 🧠 Rethinking Fraud Detection: It’s Not About Accuracy — It’s About Prioritization Under Uncertainty
+### 🧠 Rethinking Fraud Detection: It’s Not About Accuracy It’s About Prioritization Under Uncertainty
 
-Most fraud detection systems fail—not because they lack data or computing power, but because they optimize for the wrong thing. In high-volume environments like credit card networks, the real challenge isn’t prediction, it’s prioritization.
+Most fraud detection systems fail not because they lack data or computing power, but because they optimize for the wrong thing. In high volume environments like credit card networks, the real challenge isn’t prediction, it’s prioritization.
 
-You’re not trying to classify every transaction perfectly. You’re trying to elevate the few critical cases where intervention actually matters—despite limited signal, overwhelming noise, and asymmetric cost.
+You’re not trying to classify every transaction perfectly. You’re trying to elevate the few critical cases where intervention actually matters despite limited signal, overwhelming noise, and asymmetric cost.
 
 ⸻
 
@@ -29,7 +29,7 @@ In this context:
 * A “missed fraud” can mean financial loss, reputational damage, or regulatory penalties.
 * A “false alarm” is just an inconvenient flag—tolerable up to a point.
 
-So the goal shifts from maximizing accuracy to optimizing intervention impact under strict false-positive constraints.
+So the goal shifts from maximizing accuracy to optimizing intervention impact under strict false/positive constraints.
 
 ⸻
 
@@ -53,21 +53,21 @@ Ask:
 #### Key Principles:
 1. Rank-based Evaluation
     * Use precision-recall curves to evaluate performance across decision thresholds.
-	* Prioritize PR-AUC, not ROC-AUC, for model selection.
+	* Prioritize PR/AUC, not ROC-AUC, for model selection.
 2.	Threshold-Aware Metrics
 	* Pick a working threshold that aligns with operational tolerance for false positives.
 	* Measure F1, recall, and precision at that point.
 3.	Probability Calibration
 	* Don’t rely on raw scores—calibrate your outputs (e.g., Platt scaling, isotonic regression) so they reflect true intervention likelihood.
 4.	Risk Framing over Classification
-	* Use models that output well-ranked risk scores, not just class predictions.
+	* Use models that output well ranked risk scores, not just class predictions.
 	* Gradient boosting and anomaly detection models often excel here.
 
 ⸻
 
 ### 📌 Bottom Line
 
-You don’t need a perfect classifier — you need a reliable, rank-aware signal that enables smart intervention. That’s where true impact lies in fraud detection.
+You don’t need a perfect classifier you need a reliable, rank-aware signal that enables smart intervention. That’s where true impact lies in fraud detection.
 
 ---
 
@@ -87,11 +87,11 @@ You don’t need a perfect classifier — you need a reliable, rank-aware signal
 
 Combine:
 
-* Unsupervised anomaly detection (Isolation Forest) — detects unknown fraud patterns, no label needed.
+* Unsupervised anomaly detection (Isolation Forest) detects unknown fraud patterns, no label needed.
 
-* Supervised learning — learns from known frauds and real transaction history.
+* Supervised learning learns from known frauds and real transaction history.
 
-* Threshold tuning + PR-AUC/F1 metrics — ensures real-world deployment value.
+* Threshold tuning + PR-AUC/F1 metrics ensures real-world deployment value.
 
            Raw Data (creditcard.csv)
                     |
@@ -147,7 +147,7 @@ EDA focused on understanding the distribution of transaction features and the na
 1. Class Distribution
 ![Class imbalance bar plot](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/class_distribution.png)
 ---
-Less than 0.2% of all transactions are fraudulent — a textbook example of class imbalance. This log-scaled chart visualizes the massive skew in class frequencies, with each bar labeled by percentage. Such imbalance challenges traditional classifiers, which tend to favor the majority class and ignore rare fraud cases.
+Less than 0.2% of all transactions are fraudulent a textbook example of class imbalance. This log-scaled chart visualizes the massive skew in class frequencies, with each bar labeled by percentage. Such imbalance challenges traditional classifiers, which tend to favor the majority class and ignore rare fraud cases.
 ----
 2. Amount Distribution by Class
 ![Log-scaled histogram of transaction amounts by class](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/amount_distribution_by_class.png)
@@ -157,7 +157,7 @@ This plot shows how transaction amounts are distributed across classes. Fraudule
 3. Time Distribution by Class
 ![Histogram of transaction times by class](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/hourly_transaction_density.png)
 ----
-This density plot reveals that while legitimate transactions peak during typical business hours, fraudulent activity appears more uniformly distributed — possibly taking place during off-peak hours to avoid detection.
+This density plot reveals that while legitimate transactions peak during typical business hours, fraudulent activity appears more uniformly distributed possibly taking place during off-peak hours to avoid detection.
 ----
 4. Correlation Heatmap
 ![Heatmap of correlations between all numeric features](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/correlation_matrix.png)
@@ -333,6 +333,6 @@ weighted avg     0.9996    0.9996    0.9996     56962
 | F1 Score (Fraud)      | 0.8588              | 0.8817                   |
 | PR AUC                | 0.8602              | 0.8602                   |
 
-> Tuning improved recall and F1 score while trading off a minor precision loss — suitable when minimizing false negatives is the priority.
+> Tuning improved recall and F1 score while trading off a minor precision loss suitable when minimizing false negatives is the priority.
 
 ----
