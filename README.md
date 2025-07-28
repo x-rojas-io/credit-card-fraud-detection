@@ -255,7 +255,7 @@ Inject `anomaly_score` as an additional feature in supervised learning to enrich
 ![Feature ranking by Gini importance](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/rf_feature_importance.png)
 ----
 4. Raw metrics export
-![ Metrics](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/keyresult1.jpeg)
+![ Metrics](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/keyresult1.jpg)
 
 ---
 ## 🎯 Threshold Tuning
@@ -315,7 +315,7 @@ weighted avg     0.9996    0.9996    0.9996     56962
 
 ## 📈 Key Results
 
-![ Metrics](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/keyresult.jpeg)
+![ Metrics](https://raw.githubusercontent.com/x-rojas-io/credit-card-fraud-detection/main/assets/keyresult.jpg)
 
 > Tuning improved recall and F1 score while trading off a minor precision loss suitable when minimizing false negatives is the priority.
 
